@@ -1,0 +1,14 @@
+.navbar{
+    display: flex;
+    flex-direction: row;
+    height: 56px;
+    background: #fff;
+    border-bottom: 1px solid rgba(0, 0, 0, .08);
+    box-shadow: 0 1px 5px rgb(0 0 0 / 1%);
+    /* padding: 10px 0px; */
+}
+.navbar > *{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
