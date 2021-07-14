@@ -1,8 +1,10 @@
 .navbar{
+    position: relative;
     display: flex;
     flex-direction: row;
     height: 56px;
     background: #fff;
+    margin-bottom: 56px;
     border-bottom: 1px solid rgba(0, 0, 0, .08);
     box-shadow: 0 1px 5px rgb(0 0 0 / 1%);
     /* padding: 10px 0px; */
@@ -12,3 +14,24 @@
     flex-direction: column;
     justify-content: center;
 }
+.right{
+    display: none;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+/* On screens that are 992px wide or less, go from four columns to two columns */
+@media screen and (max-width: 992px) {
+    .column {
+      width: 50%;
+    }
+  }
+  
+  /* On screens that are 600px wide or less, make the columns stack on top of each other instead of next to each other */
+  @media screen and (max-width: 600px) {
+    .right {
+      /* width: 100%; */
+      display: block;
+    }
+  } 

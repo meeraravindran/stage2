@@ -1,0 +1,105 @@
+.sidenav {
+  margin-top: 3px;
+  height: 100%; /* 100% Full-height */
+  width: 250px; /* 0 width - change this with JavaScript */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Stay on top */
+  top: 56px; /* Stay at the top */
+  left: 0;
+  background-color: #fff; /* Black*/
+  overflow-x: hidden; /* Disable horizontal scroll */
+}
+
+/* The navigation menu links */
+.sidenav a {
+  text-decoration: none;
+  font-size: 25px;
+  color: #000;
+  display: block;
+}
+
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+#main {
+  margin-left: 250px;
+  transition: margin-left 0.5s;
+}
+
+.avatar {
+  vertical-align: middle;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.avatar-username{
+    display: flex;
+    flex-direction: row;
+    padding: 10px 0px 10px 20px;
+}
+
+.avatar-username p{
+    margin-left: 10px;
+    font-weight: 500;
+}
+
+.sidenav-item{
+    display: flex;
+    padding: 3px 10px 3px 25px;
+    font-size: 18px;
+    background-color: #fff;
+    position: relative;
+}
+
+.sidenav-item :hover{
+    color:#fff;
+    background-color: #800088;
+
+}
+ .sidenav-item .content{
+    font-size: 12px;
+    display: flex;
+    flex-direction: row;
+}
+.sidenav-item .img  {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.sidenav-item .count{
+    position: absolute;
+    margin:5px 0px 5px 80px;
+    right: 20px;
+}
+.item-text{
+    margin:5px 0px 5px 25px;
+}
+
+.button{
+    border-radius: 10px;
+    height: 30px;
+    width: 200px;
+    border-color: #fff;
+    outline: #fff;
+    background-color: rgb(187, 187, 187);
+    text-align: center;
+    padding: 3px;
+    margin-left: 20px;
+    margin-top: 5px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidenav {
+    padding-top: 15px;
+  }
+  .sidenav a {
+    font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .sidenav {
+    display: none;
+  }
+}
