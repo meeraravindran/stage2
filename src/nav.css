@@ -22,6 +22,7 @@
 #main {
   margin-left: 250px;
   transition: margin-left 0.5s;
+  /* overflow-y: scroll; */
 }
 
 .avatar {
@@ -50,11 +51,6 @@
     position: relative;
 }
 
-.sidenav-item :hover{
-    color:#fff;
-    background-color: #800088;
-
-}
  .sidenav-item .content{
     font-size: 12px;
     display: flex;
@@ -79,13 +75,16 @@
     border-radius: 10px;
     height: 30px;
     width: 200px;
-    border-color: #fff;
-    outline: #fff;
+    border:none;
     background-color: rgb(187, 187, 187);
-    text-align: center;
     padding: 3px;
     margin-left: 20px;
     margin-top: 5px;
+}
+
+.current-item{
+  background-color: purple;
+  color: #fff;
 }
 
 /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */

@@ -6,8 +6,8 @@ import { RiTeamFill } from "react-icons/ri";
 import { GrContactInfo } from "react-icons/gr";
 import { CgNotes } from "react-icons/cg";
 import { SiAzureartifacts } from "react-icons/si";
-import { GiBrainStem, GiBrainstorm } from "react-icons/gi";
-import {RiArrowDropDownLine} from "react-icons/ri"
+import { GiBrainstorm } from "react-icons/gi";
+import SeeMoreButton from "./SeeMoreButton";
 
 function SideNav(props) {
   return (
@@ -20,7 +20,7 @@ function SideNav(props) {
         />
         <p>Alex</p>
       </div>
-      <div className="sidenav-item">
+      <div className="sidenav-item current-item hover-color">
         <div className="img">
           <FaFileAlt />
         </div>
@@ -30,7 +30,7 @@ function SideNav(props) {
         </div>
       </div>
 
-      <div className="sidenav-item">
+      <div className="sidenav-item hover-color">
         <div className="img">
           <FaFileAlt />
         </div>
@@ -39,7 +39,7 @@ function SideNav(props) {
           <p className="count">20</p>
         </div>
       </div>
-      <div className="sidenav-item">
+      <div className="sidenav-item hover-color">
         <div className="img">
           <RiDraftLine />
         </div>
@@ -49,7 +49,7 @@ function SideNav(props) {
         </div>
       </div>
       
-      <div className="sidenav-item">
+      <div className="sidenav-item hover-color">
         <div className="img">
           <BsPersonCheck />
         </div>
@@ -58,7 +58,7 @@ function SideNav(props) {
           <p className="count">50</p>
         </div>
       </div>
-      <div className="sidenav-item">
+      <div className="sidenav-item hover-color">
         <div className="img">
           <BsPersonCheckFill />
         </div>
@@ -68,7 +68,7 @@ function SideNav(props) {
         </div>
       </div>
 
-      <div className="sidenav-item">
+      <div className="sidenav-item hover-color">
         <div className="img">
           <RiTeamFill />
         </div>
@@ -78,7 +78,7 @@ function SideNav(props) {
         </div>
       </div>
 
-      <div className="sidenav-item">
+      <div className="sidenav-item hover-color">
         <div className="img">
           <GrContactInfo />
         </div>
@@ -88,9 +88,9 @@ function SideNav(props) {
         </div>
       </div>
 
-      <div className="button">See More<span><RiArrowDropDownLine/></span></div>
+      <SeeMoreButton/>
 
-      <div className="sidenav-item">
+      <div className="sidenav-item hover-color">
         <div className="img">
           <SiAzureartifacts />
         </div>
@@ -99,7 +99,7 @@ function SideNav(props) {
           {/* <p className="count">10</p> */}
         </div>
       </div>
-      <div className="sidenav-item">
+      <div className="sidenav-item hover-color">
         <div className="img">
           <CgNotes />
         </div>
@@ -108,7 +108,7 @@ function SideNav(props) {
           {/* <p className="count">10</p> */}
         </div>
       </div>
-      <div className="sidenav-item">
+      <div className="sidenav-item hover-color">
         <div className="img">
           <GiBrainstorm />
         </div>
@@ -118,8 +118,7 @@ function SideNav(props) {
         </div>
       </div>
 
-      <div className="button">See More<span><RiArrowDropDownLine/></span></div>
-
+      <SeeMoreButton/>
     </div>
   );
 }

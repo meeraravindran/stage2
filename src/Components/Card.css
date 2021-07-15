@@ -3,6 +3,7 @@
     border:none;
     height: 30px;
     margin-left: 10px;
+    margin-top: 10px;
     width: 500px;
     background-color: rgb(235, 235, 235);
 }
@@ -30,4 +31,19 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+}
+
+.send-icon{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 10px;
+    font-size: 30px;
+    cursor: pointer;  
+}
+
+.card-header{
+    display: flex;
+    flex-direction: row;
+    /* margin-top: 10px; */
 }
