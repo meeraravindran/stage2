@@ -96,7 +96,6 @@ function SideNav(props) {
         </div>
         <div className="content">
           <p className="item-text">New Artifacts</p>
-          {/* <p className="count">10</p> */}
         </div>
       </div>
       <div className="sidenav-item hover-color">
@@ -105,7 +104,6 @@ function SideNav(props) {
         </div>
         <div className="content">
           <p className="item-text">New Modules</p>
-          {/* <p className="count">10</p> */}
         </div>
       </div>
       <div className="sidenav-item hover-color">
@@ -114,7 +112,6 @@ function SideNav(props) {
         </div>
         <div className="content">
           <p className="item-text">New Skills</p>
-          {/* <p className="count">10</p> */}
         </div>
       </div>
 
