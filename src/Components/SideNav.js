@@ -8,10 +8,28 @@ import { CgNotes } from "react-icons/cg";
 import { SiAzureartifacts } from "react-icons/si";
 import { GiBrainstorm } from "react-icons/gi";
 import SeeMoreButton from "./SeeMoreButton";
+import { useEffect, useRef } from "react";
 
 function SideNav(props) {
+
+  let navRef = useRef(null);
+  useEffect(()=>{
+    document.addEventListener("click",event => {
+      console.log("Main Listner Clicked")
+      if((navRef.current !== event.target) && (true)){
+        let left = getComputedStyle(navRef.current).left;
+        if(left !== "0px"){
+          let nav=document.getElementById("mySidenav")
+          nav.style.right = "auto"
+          nav.style.left="0px"
+          nav.style.display = "none"
+        }
+      }
+    },true)
+  },[])
+  
   return (
-    <div id="mySidenav" class="sidenav">
+    <div ref={navRef} id="mySidenav" class="sidenav">
       <div className="avatar-username">
         <img
           src="https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50?s=50"
@@ -96,6 +114,7 @@ function SideNav(props) {
         </div>
         <div className="content">
           <p className="item-text">New Artifacts</p>
+          {/* <p className="count">10</p> */}
         </div>
       </div>
       <div className="sidenav-item hover-color">
@@ -104,6 +123,7 @@ function SideNav(props) {
         </div>
         <div className="content">
           <p className="item-text">New Modules</p>
+          {/* <p className="count">10</p> */}
         </div>
       </div>
       <div className="sidenav-item hover-color">
@@ -112,6 +132,7 @@ function SideNav(props) {
         </div>
         <div className="content">
           <p className="item-text">New Skills</p>
+          {/* <p className="count">10</p> */}
         </div>
       </div>
 

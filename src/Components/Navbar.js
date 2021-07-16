@@ -4,12 +4,15 @@ import { FaBars } from "react-icons/fa";
 import "./Navbar.css"
 function Navbar() {
 const openNavbar=()=>{
+  console.log("NAVBAR CLICKED");
   let nav=document.getElementById("mySidenav")
   nav.style.right = "0px"
   nav.style.left="auto"
   nav.style.display = "block"
 
 }
+
+
   return (
     <div className="navbar">
       <div><FaArrowLeft/></div>

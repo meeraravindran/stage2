@@ -13,6 +13,9 @@ const Home = () => {
         <Card />
         <Post content={con} />
         <Post content={con1} />
+        <Post content={con1} />
+        <Post content={con1} />
+        <Post content={con1} />
       </div>
     </div>
   );

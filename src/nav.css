@@ -20,6 +20,7 @@
 
 /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
 #main {
+  margin-top: 100px;
   margin-left: 250px;
   transition: margin-left 0.5s;
   /* overflow-y: scroll; */
@@ -49,6 +50,11 @@
     font-size: 18px;
     background-color: #fff;
     position: relative;
+}
+
+.sidenav-item:hover{
+  cursor: pointer;
+  background-color: aqua;
 }
 
  .sidenav-item .content{
@@ -100,6 +106,15 @@
 @media screen and (max-width: 600px) {
   .sidenav {
     display: none;
+  }
+  #main{
+    margin-left: 0px;
+  }
+}
+
+@media screen and (min-width: 600px){
+  .sidenav{
+    display: block !important;
   }
 }
 
