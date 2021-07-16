@@ -1,6 +1,6 @@
 import "./Post.css";
-import Pic from "../assests/download.jpg"
-const Post = () => {
+// import Pic from "../assests/download.jpg"
+const Post = (props) => {
   return (
     <div className="post">
       <div className="header">
@@ -16,11 +16,9 @@ const Post = () => {
         </div>
       </div>
       <div className="post-content">
-        <img src={Pic} />
+        {/* <img src={Pic} /> */}
         <p>
-          lorps ipsum sjkdbdjkbd djkbgadjhfvd jhfbsdjh fcwjhfsdjh jhsdfsdh jag
-          qls vjsgfawgue jsdbfha gfe jawefejhg fe fv!!!dnfdfgef jhawfwe f
-          sdjfasdf
+          {props.content}
         </p>
       </div>
     </div>

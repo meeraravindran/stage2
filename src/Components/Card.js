@@ -1,11 +1,14 @@
 import React from 'react';
-import {Component } from 'react';
+// import {Component } from 'react';
 import "./Card.css";
 import { BiVideo } from "react-icons/bi";
 import { AiOutlineCamera } from "react-icons/ai";
 import { BsMic } from "react-icons/bs";
 import { AiOutlineSend } from "react-icons/ai";
 const Card = (props) => {
+  // const displayCard =() =>{
+  //   document.getElementsByClassName("in").style.display="block";
+  // }
   return (
     <div className="card">
       <div className="card-header">
@@ -19,7 +22,7 @@ const Card = (props) => {
           type="text"
           placeholder="Share something here..."
         />
-        <div className="send-icon" onClick={checkInput}>
+        <div className="send-icon"z>
           <AiOutlineSend />
         </div>
       </div>
@@ -39,7 +42,6 @@ const Card = (props) => {
         </div>
         <div className="icon">
           <div className="center">
-            {" "}
             <BsMic />
           </div>
           <p>Say it</p>

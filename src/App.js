@@ -1,19 +1,36 @@
-import Card from "./Components/Card";
+import React from "react";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
+import Home from "./Routes/Home"
+import MyFeed from "./Routes/MyFeed"
+import Drafts from "./Routes/Drafts"
+import MyFollowers from "./Routes/MyFollowers"
+import Following from "./Routes/Following"
+import MyTeam from "./Routes/MyTeam"
+import MyReportees from "./Routes/MyReportees"
+import Artifacts from "./Routes/Artifacts"
+import Modules from "./Routes/Modules"
+import Skills from "./Routes/Skills"
 import Navbar from "./Components/Navbar";
-import Post from "./Components/Post";
-import SideNav from "./Components/SideNav";
-import "./nav.css"
+import "./nav.css";
+
 function App() {
-  return (
+   return (
     <div className="App">
       <Navbar />
-      <div>
-        <SideNav/>
-        <div id="main">
-          <Card/>
-          <Post/>
-        </div>
-      </div>
+      <BrowserRouter>
+        <Switch>
+          <Route path="/" exact component={Home} />
+          <Route path="/myfeed" exact component={MyFeed} />
+          <Route path="/drafts" exact component={Drafts} />
+          <Route path="/myfollowers" exact component={MyFollowers} />
+          <Route path="/following" exact component={Following} />
+          <Route path="/team" exact component={MyTeam} />
+          <Route path="/reportees" exact component={MyReportees} />
+          <Route path="/artifacts" exact component={Artifacts} />
+          <Route path="/modules" exact component={Modules} />
+          <Route path="/skills" exact component={Skills} />
+        </Switch>
+      </BrowserRouter>
     </div>
   );
 }
