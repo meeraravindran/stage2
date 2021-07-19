@@ -1,21 +1,39 @@
+import React, { useState, useEffect } from "react";
 import SideNav from "../Components/SideNav";
 import Card from "../Components/Card";
 import Post from "../Components/Post";
 const Home = () => {
-  const con =
-    "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.";
-  const con1 =
-    "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters.";
+  const [posts, setPosts] = useState([]);
+  //const [reload, setReload] = useState(false);
+  const loadPosts = () => {
+    let posts = [];
+    if (localStorage.getItem("posts")) {
+      posts = JSON.parse(localStorage.getItem("posts"));
+    }
+    return posts;
+  };
+
+  useEffect(() => {
+    setPosts(loadPosts());
+  }, []);
+  const loadAllPosts = () => {
+    return (
+      posts &&
+      posts.map((post, index) => <Post key={index} content={post.text} />)
+    );
+  };
+
+  const addPost = (item) => {
+    setPosts([...posts, item]);
+    localStorage.setItem("posts", JSON.stringify(posts));
+    console.log("posts",posts)
+  };
   return (
     <div>
       <SideNav />
       <div id="main">
-        <Card />
-        <Post content={con} />
-        <Post content={con1} />
-        <Post content={con1} />
-        <Post content={con1} />
-        <Post content={con1} />
+        <Card handleNewPost={addPost} />
+        {posts.length>0 ? loadAllPosts():(<h3>You have not posted anything!!!</h3>)}
       </div>
     </div>
   );

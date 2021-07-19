@@ -29,12 +29,12 @@ function SideNav(props) {
   },[])
   
   return (
-    <div ref={navRef} id="mySidenav" class="sidenav">
+    <div ref={navRef} id="mySidenav" className="sidenav">
       <div className="avatar-username">
         <img
           src="https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50?s=50"
           alt="Avatar"
-          class="avatar"
+          className="avatar"
         />
         <p>Alex</p>
       </div>
@@ -114,7 +114,6 @@ function SideNav(props) {
         </div>
         <div className="content">
           <p className="item-text">New Artifacts</p>
-          {/* <p className="count">10</p> */}
         </div>
       </div>
       <div className="sidenav-item hover-color">
@@ -123,7 +122,6 @@ function SideNav(props) {
         </div>
         <div className="content">
           <p className="item-text">New Modules</p>
-          {/* <p className="count">10</p> */}
         </div>
       </div>
       <div className="sidenav-item hover-color">
@@ -132,7 +130,6 @@ function SideNav(props) {
         </div>
         <div className="content">
           <p className="item-text">New Skills</p>
-          {/* <p className="count">10</p> */}
         </div>
       </div>
 
