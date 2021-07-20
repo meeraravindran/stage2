@@ -86,3 +86,28 @@
   .custom-file-input{
       width: 90px;
   }
+
+  .attachment{
+      display: flex;
+      flex-direction: row;
+  }
+
+  .attachment p{
+      margin: 0px;
+  }
+
+  .close{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      cursor: pointer;
+      border: 1px solid purple;
+  }
+
+  .button-style{
+      background-color: #fff;
+      border: 1px solid purple;
+      border-radius: 5px;
+      margin-left: 2px;
+      cursor: pointer;
+  }

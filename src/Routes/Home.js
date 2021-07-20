@@ -19,21 +19,33 @@ const Home = () => {
   const loadAllPosts = () => {
     return (
       posts &&
-      posts.map((post, index) => <Post key={index} content={post.text} />)
+      posts.map((post, index) => (
+        <Post
+          key={index}
+          content={post.text}
+          file={post.file}
+          date={post.date}
+          ext={post.fileExtension}
+        />
+      ))
     );
   };
 
   const addPost = (item) => {
     setPosts([...posts, item]);
     localStorage.setItem("posts", JSON.stringify(posts));
-    console.log("posts",posts)
+    console.log("posts", posts);
   };
   return (
     <div>
       <SideNav />
       <div id="main">
         <Card handleNewPost={addPost} />
-        {posts.length>0 ? loadAllPosts():(<h3>You have not posted anything!!!</h3>)}
+        {posts.length > 0 ? (
+          loadAllPosts()
+        ) : (
+          <h3>You have not posted anything!!!</h3>
+        )}
       </div>
     </div>
   );

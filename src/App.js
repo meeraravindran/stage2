@@ -10,6 +10,9 @@ import MyReportees from "./Routes/MyReportees"
 import Artifacts from "./Routes/Artifacts"
 import Modules from "./Routes/Modules"
 import Skills from "./Routes/Skills"
+import NewJoins from "./Routes/NewJoins"
+import Birthdays from "./Routes/Birthdays"
+import NewProjects from "./Routes/NewProjects"
 import Navbar from "./Components/Navbar";
 import "./nav.css";
 
@@ -29,6 +32,9 @@ function App() {
           <Route path="/artifacts" exact component={Artifacts} />
           <Route path="/modules" exact component={Modules} />
           <Route path="/skills" exact component={Skills} />
+          <Route path="/newjoinees" exact component={NewJoins} />
+          <Route path="/birthdays" exact component={Birthdays} />
+          <Route path="/newprojects" exact component={NewProjects} />
         </Switch>
       </BrowserRouter>
     </div>

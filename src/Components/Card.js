@@ -1,7 +1,8 @@
 import { React, useState, useRef } from "react";
 import { MdCamera } from "react-icons/md";
 import Webcam from "react-webcam";
-//import Camera from "./Camera";
+import { MdClose } from "react-icons/md";
+import {MdRepeat} from "react-icons/md"
 import "./Card.css";
 import { BiVideo } from "react-icons/bi";
 import { AiOutlineCamera } from "react-icons/ai";
@@ -11,36 +12,86 @@ const Card = (props) => {
   const [postContent, setPostContent] = useState("");
   const [postMediaContent, setPostMediaContent] = useState("");
   const [webCam, setWebCam] = useState(false);
-  const handleChange = (event) => {
-    setPostContent(event.target.value);
-  };
-  const toggleCamera = () => {
-    webCam === true ? setWebCam(false) : setWebCam(true);
-  };
+  const [fileContent, setFileContent] = useState("");
+  const [fileExt, setFileExt] = useState("");
   const webcamRef = useRef(null);
   const attachmentRef = useRef(null);
-
-  const addPost = () => {
-    const item = {
-      text: postContent,
-      date: Date.now(),
-    };
-    props.handleNewPost(item);
-    setPostContent("");
-  };
   const videoConstraints = {
     width: 220,
     height: 300,
     facingMode: "user",
   };
-  const saveImg = () => {
-    if (postMediaContent === "")
-      setPostMediaContent(webcamRef.current.getScreenshot());
-    else setPostMediaContent("");
+  const handleChange = (event) => {
+    setPostContent(event.target.value);
   };
-  const attachedFile=()=>{
-    console.log(document.getElementById("attachment").files)
-  }
+  const toggleCamera = () => {
+    //webCam === true ? setWebCam(false) : setWebCam(true);
+    if (webCam) {
+      setWebCam(false);
+      setPostMediaContent("");
+      setFileExt("");
+    } else setWebCam(true);
+  };
+  const addPost = () => {
+    if(postContent.length<5){
+      alert("Post content is too small")
+      return
+    }
+    if(postContent.length > 1000){
+      alert("Post content is too large")
+      return
+    }
+    const item = {
+      text: postContent,
+      date: Date.now(),
+      file: postMediaContent,
+      fileExtension: fileExt,
+    };
+    props.handleNewPost(item);
+    setPostContent("");
+    setPostMediaContent("");
+    setFileExt("");
+    clearAttachment();
+  };
+  const saveImg = () => {
+    if (postMediaContent === "") {
+      setPostMediaContent(webcamRef.current.getScreenshot());
+      setFileExt("image");
+    } else setPostMediaContent("");
+  };
+  const clearAttachment = () => {
+    setFileContent("")
+    setFileExt("")
+    setPostMediaContent("")
+  };
+  const attachedFile = (event) => {
+    let file = event.target.files[0];
+    let fileName = file.name;
+    let array = fileName.split(".");
+    if (
+      array[1] === "docx" ||
+      array[1] === "mp4" ||
+      array[1] === "jpg" ||
+      array[1] === "pdf" ||
+      array[1] === "ppt"
+    ) {
+      setFileContent(fileName);
+      setFileExt(array[1]);
+      let reader = new FileReader();
+      reader.onload = (function (theFile) {
+        return function (e) {
+          var binaryData = e.target.result;
+          var base64String = window.btoa(binaryData);
+          console.log(base64String);
+          setPostMediaContent(base64String);
+        };
+      })(file);
+      reader.readAsBinaryString(file);
+    } else {
+      alert("Unspported file type");
+      return;
+    }
+  };
   return (
     <div className="card">
       <div className="card-header">
@@ -61,7 +112,14 @@ const Card = (props) => {
           <AiOutlineSend />
         </div>
       </div>
-
+      {fileContent !== "" ? (
+        <div className="attachment">
+          <p>{fileContent}</p>
+          <div className="close" onClick={clearAttachment}>
+            <MdClose />
+          </div>
+        </div>
+      ) : null}
       {webCam === true ? (
         postMediaContent === "" ? (
           <Webcam
@@ -77,16 +135,28 @@ const Card = (props) => {
         )
       ) : null}
       {postMediaContent === "" && webCam === true ? (
-        <MdCamera onClick={saveImg} />
+        <div>
+        <MdCamera className="button-style" onClick={saveImg} title="Capture Image"/>
+        <MdClose className="button-style" onClick={toggleCamera} title="Close Camera"/>
+        </div>
       ) : webCam === true ? (
-        <button onClick={saveImg}>Retake</button>
+        <div>
+        <MdRepeat className="button-style" onClick={saveImg} title="Capture Image"/>
+        <MdClose className="button-style" onClick={toggleCamera} title="Close Camera"/>
+        </div>
       ) : null}
       <div className="icons">
         <div className="icon">
           <div className="center">
-              <BiVideo />
+            <BiVideo />
           </div>
-          <input type="file" className ="custom-file-input" ref={attachmentRef} onChange={attachedFile} id="attachment"/>
+          <input
+            type="file"
+            className="custom-file-input"
+            ref={attachmentRef}
+            onChange={attachedFile}
+            id="attachment"
+          />
         </div>
 
         <div className="icon">

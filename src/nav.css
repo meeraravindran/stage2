@@ -1,29 +1,28 @@
 .sidenav {
   margin-top: 3px;
-  height: 100%; /* 100% Full-height */
-  width: 250px; /* 0 width - change this with JavaScript */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Stay on top */
-  top: 56px; /* Stay at the top */
+  height: 100%;
+  width: 250px; 
+  position: fixed;
+  z-index: 1;
+  top: 56px; 
   left: 0;
-  background-color: #fff; /* Black*/
-  overflow-x: hidden; /* Disable horizontal scroll */
+  background-color: #fff;
+  overflow-x: hidden; 
 }
 
-/* The navigation menu links */
 .sidenav a {
   text-decoration: none;
-  font-size: 25px;
   color: #000;
-  display: block;
+}
+.sidenav a:hover {
+  text-decoration: none;
+  color: #fff;
 }
 
-/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
 #main {
   margin-top: 100px;
   margin-left: 250px;
   transition: margin-left 0.5s;
-  /* overflow-y: scroll; */
 }
 
 .avatar {
@@ -42,6 +41,10 @@
 .avatar-username p{
     margin-left: 10px;
     font-weight: 500;
+}
+
+.recently-added{
+  padding: 3px 10px 3px 25px;
 }
 
 .sidenav-item{
@@ -84,12 +87,16 @@
     width: 200px;
     border:none;
     background-color: rgb(187, 187, 187);
-    padding: 3px;
+    padding: 7px 0px;
     margin-left: 20px;
     margin-top: 5px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }
 
-.current-item{
+.current-item, .current-item a{
   background-color: purple;
   color: #fff;
 }
@@ -99,9 +106,9 @@
   .sidenav {
     padding-top: 15px;
   }
-  .sidenav a {
+  /* .sidenav a {
     font-size: 18px;
-  }
+  } */
 }
 
 @media screen and (max-width: 600px) {
