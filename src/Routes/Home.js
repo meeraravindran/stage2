@@ -27,6 +27,7 @@ const Home = () => {
           date={post.date}
           ext={post.fileExtension}
           deletePost={deletePost}
+          updatePost={updatePost}
           id={post.id}
         />
       ))
@@ -47,6 +48,19 @@ const Home = () => {
       if(post.id === id)
         return;
       newPosts.push(post);   
+    })
+    setPosts([...newPosts])
+
+  }
+  const updatePost = (id,textContent) =>{
+    let newPosts = [];
+    posts.forEach(post => {
+      if(post.id === id){
+        newPosts.push({...post,text:textContent,date:Date.now()})
+      }
+      else{
+        newPosts.push(post);   
+      }
     })
     setPosts([...newPosts])
 
