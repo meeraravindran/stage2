@@ -26,16 +26,32 @@ const Home = () => {
           file={post.file}
           date={post.date}
           ext={post.fileExtension}
+          deletePost={deletePost}
+          id={post.id}
         />
       ))
     );
   };
 
+  useEffect(()=>{
+    localStorage.setItem("posts", JSON.stringify(posts));
+  },[posts])
+
   const addPost = (item) => {
     setPosts([...posts, item]);
-    localStorage.setItem("posts", JSON.stringify(posts));
     console.log("posts", posts);
   };
+  const deletePost = (id) =>{
+    let newPosts = [];
+    posts.forEach(post => {
+      if(post.id === id)
+        return;
+      newPosts.push(post);   
+    })
+    setPosts([...newPosts])
+
+  }
+
   return (
     <div>
       <SideNav />

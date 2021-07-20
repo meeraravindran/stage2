@@ -2,6 +2,8 @@ import { React, useState, useRef } from "react";
 import { MdCamera } from "react-icons/md";
 import Webcam from "react-webcam";
 import { MdClose } from "react-icons/md";
+import { v4 as uuidv4 } from 'uuid';
+
 import {MdRepeat} from "react-icons/md"
 import "./Card.css";
 import { BiVideo } from "react-icons/bi";
@@ -42,6 +44,7 @@ const Card = (props) => {
       return
     }
     const item = {
+      id: uuidv4(),
       text: postContent,
       date: Date.now(),
       file: postMediaContent,
@@ -112,6 +115,7 @@ const Card = (props) => {
           <AiOutlineSend />
         </div>
       </div>
+      <div className="attachment-preview">
       {fileContent !== "" ? (
         <div className="attachment">
           <p>{fileContent}</p>
@@ -145,6 +149,7 @@ const Card = (props) => {
         <MdClose className="button-style" onClick={toggleCamera} title="Close Camera"/>
         </div>
       ) : null}
+      </div>
       <div className="icons">
         <div className="icon">
           <div className="center">
@@ -161,9 +166,9 @@ const Card = (props) => {
 
         <div className="icon">
           <div className="center">
-            <AiOutlineCamera onClick={toggleCamera} />
+            <AiOutlineCamera/>
           </div>
-          <p>Capture it</p>
+          <p className="capture-it" onClick={toggleCamera}>Capture it</p>
         </div>
         <div className="icon">
           <div className="center">

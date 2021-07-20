@@ -14,6 +14,7 @@
 .header{
     display: flex;
     flex-direction: row;
+    position: relative;
 }
 .name{
     margin-left: 10px;
@@ -26,6 +27,24 @@
     color: rgb(116, 116, 116);
 }
 
+.post-options{
+    position: absolute;
+    right: 10px;
+    top: 5px;
+    cursor: pointer;
+}
+
+.post-options-menu{
+    display: none;
+    position: absolute;
+    right: 0px;
+}
+
+.post-options-menu > div:hover {
+    background-color: purple;
+    color: #fff;
+}
+
 .post-content{
     display: flex;
     flex-direction: column;
@@ -35,4 +54,12 @@
 
 .post-content p{
     margin: 0px;
+}
+
+
+@media screen and (max-width:600px){
+    .post{
+        margin:10px;
+    }
+    
 }

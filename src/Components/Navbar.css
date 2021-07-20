@@ -11,6 +11,9 @@
   box-shadow: 0 1px 5px rgb(0 0 0 / 1%);
   /* padding: 10px 0px; */
 }
+.navbar p{
+  margin-left: 10px;
+}
 .navbar > *{
   display: flex;
   flex-direction: column;

@@ -21,7 +21,7 @@ const SideNav = () => {
     else setDisplay(true);
   };
   const changeStyle1 = () => {
-    if (display1) setDisplay(false);
+    if (display1) setDisplay1(false);
     else setDisplay1(true);
   };
   useEffect(() => {

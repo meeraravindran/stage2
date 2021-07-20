@@ -42,6 +42,7 @@
     cursor: pointer;  
 }
 
+
 .card-header{
     display: flex;
     flex-direction: row;
@@ -110,4 +111,31 @@
       border-radius: 5px;
       margin-left: 2px;
       cursor: pointer;
+      margin-top: 2px;
+  }
+  
+  .capture-it{
+      cursor: pointer;
+  }
+
+  .attachment-preview{
+      width:100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+  }
+
+  @media screen and (max-width:600px){
+      .card{
+          margin:10px;
+      }
+
+      .icons{
+          margin-right: 0;
+      }
+
+      .card-input{
+          width: 300px;
+      }
   }
