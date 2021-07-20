@@ -55,7 +55,7 @@ const Post = (props) => {
         </div>
         <div
           onClick={() => {
-            let menu = document.getElementById("post-menu");
+            let menu = document.getElementById(props.id);
             let disp = getComputedStyle(menu).display;
             if (disp === "none") menu.style.display = "block";
             else menu.style.display = "none";
@@ -63,7 +63,7 @@ const Post = (props) => {
           className="post-options"
         >
           <BsThreeDots />
-          <div id="post-menu" className="post-options-menu">
+          <div id={props.id} className="post-options-menu">
             <div
               onClick={() => {
                 setEdit(true);
