@@ -49,7 +49,7 @@ const Post = (props) => {
           className="avatar avatar-border"
         />
         <div className="name">
-          <span>Jessie Pinkman</span>
+          <span>Walter White</span>
           <small>Manager</small>
           <small>{postedTime(props.date)}</small>
         </div>
@@ -82,13 +82,15 @@ const Post = (props) => {
         </div>
       </div>
       <div className="post-content">
-        {props.ext === "jpg" ? (
+        {(props.ext === "jpg"||props.ext==='jpeg'||props.ext==='png') ? (
           <img src={imageSource(props.ext, props.file)} />
         ) : null}
         {props.ext === "image" ? <img src={props.file} /> : null}
         {props.ext &&
         props.ext !== "image" &&
         props.ext !== "jpg" &&
+        props.ext !== "jpeg" &&
+        props.ext !== "png" &&
         props.ext !== "mp4" ? (
           <a
             href={downloadHREF(props.file)}

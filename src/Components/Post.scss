@@ -38,11 +38,19 @@
     display: none;
     position: absolute;
     right: 0px;
+    border: 2px solid purple;
+    border-radius: 4px;
 }
 
-.post-options-menu > div:hover {
+.post-options-menu .div{
+    border: 2px solid purple;
+    background-color: #fff;
+}
+
+.post-options-menu { div:hover {
     background-color: purple;
     color: #fff;
+}
 }
 
 .post-content{

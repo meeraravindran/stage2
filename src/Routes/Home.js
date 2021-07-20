@@ -68,7 +68,7 @@ const Home = () => {
 
   return (
     <div>
-      <SideNav />
+      <SideNav count={posts.length} />
       <div id="main">
         <Card handleNewPost={addPost} />
         {posts.length > 0 ? (

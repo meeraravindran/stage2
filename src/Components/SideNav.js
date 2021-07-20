@@ -12,7 +12,7 @@ import SeeMoreButton from "./SeeMoreButton";
 import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 
-const SideNav = () => {
+const SideNav = (props) => {
   const [display, setDisplay] = useState(false);
   const [display1, setDisplay1] = useState(false);
   let navRef = useRef(null);
@@ -51,9 +51,9 @@ const SideNav = () => {
           alt="Avatar"
           className="avatar"
         />
-        <p>Alex</p>
+        <p>Walter White</p>
       </div>
-      <div className="sidenav-item hover-color current-item">
+      <div className="sidenav-item hover-color">
         <div className="img">
           <FaFileAlt />
         </div>
@@ -66,7 +66,7 @@ const SideNav = () => {
         </div>
       </div>
 
-      <div className="sidenav-item hover-color">
+      <div className="sidenav-item hover-color current-item">
         <div className="img">
           <FaFileAlt />
         </div>
@@ -74,7 +74,7 @@ const SideNav = () => {
           <Link className="nav-link" to="/myfeed">
             <p className="item-text">My Buzz Feed</p>
           </Link>
-          <p className="count">20</p>
+          <p className="count">{props.count}</p>
         </div>
       </div>
       <div className="sidenav-item hover-color">

@@ -55,6 +55,7 @@ const Card = (props) => {
     setPostMediaContent("");
     setFileExt("");
     clearAttachment();
+    toggleCamera();
   };
   const saveImg = () => {
     if (postMediaContent === "") {
@@ -73,8 +74,11 @@ const Card = (props) => {
     let array = fileName.split(".");
     if (
       array[1] === "docx" ||
+      array[1] === "doc" ||
       array[1] === "mp4" ||
       array[1] === "jpg" ||
+      array[1] === "jpeg" ||
+      array[1] === "png" ||
       array[1] === "pdf" ||
       array[1] === "ppt"
     ) {

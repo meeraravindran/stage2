@@ -22,8 +22,8 @@ function App() {
       <Navbar />
       <BrowserRouter>
         <Switch>
-          <Route path="/" exact component={Home} />
-          <Route path="/myfeed" exact component={MyFeed} />
+          <Route path="/" exact component={MyFeed} />
+          <Route path="/myfeed" exact component={Home} />
           <Route path="/drafts" exact component={Drafts} />
           <Route path="/myfollowers" exact component={MyFollowers} />
           <Route path="/following" exact component={Following} />
