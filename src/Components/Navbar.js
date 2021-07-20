@@ -1,7 +1,7 @@
 import { FaArrowLeft } from "react-icons/fa";
 import { FaAngleRight } from "react-icons/fa";
 import { FaBars } from "react-icons/fa";
-import "./Navbar.css"
+import "./Navbar.scss"
 function Navbar() {
 const openNavbar=()=>{
   console.log("NAVBAR CLICKED");

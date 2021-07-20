@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { BsThreeDots } from "react-icons/bs";
-import "./Post.css";
+import "./Post.scss";
 // import Pic from "../assests/download.jpg"
 const imageSource = (ext, file) => {
   return "data:image/" + ext + ";base64," + file;

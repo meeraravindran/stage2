@@ -14,7 +14,7 @@ import NewJoins from "./Routes/NewJoins"
 import Birthdays from "./Routes/Birthdays"
 import NewProjects from "./Routes/NewProjects"
 import Navbar from "./Components/Navbar";
-import "./nav.css";
+import "./nav.scss";
 
 function App() {
    return (

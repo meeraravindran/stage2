@@ -5,7 +5,7 @@ import { MdClose } from "react-icons/md";
 import { v4 as uuidv4 } from 'uuid';
 
 import {MdRepeat} from "react-icons/md"
-import "./Card.css";
+import "./Card.scss";
 import { BiVideo } from "react-icons/bi";
 import { AiOutlineCamera } from "react-icons/ai";
 import { BsMic } from "react-icons/bs";
